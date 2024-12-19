@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rentals</title>
+    <link rel="icon" href="https://cdn.glitch.global/74966f89-6b4a-4631-ad79-95f11a65e0dd/logo7.jpg?v=1697534616110" type="icon-x/image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"  />
+
+    <style>
+        body {
+            background-color: black;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            }
+        nav{
+            background-color: black; 
+            width:100vw;
+            height: 10vh;
+            top:0px;
+            left:0px;
+            position: fixed;
+            
+        }
+        .options{
+            color: white;
+            position: absolute;
+            right: 0px;
+            top:0px;
+            width:50vw;
+            height: 10vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        
+        }
+        .options li,.dona-btn a{
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bolder;
+            height: 10vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+        .options li a:hover, .dona-btn  a:hover {
+            color: black;
+            background-color: white;
+            height: 9vh;
+            border-radius: 10%;
+            transition: 1s;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+              
+        }
+        nav li{
+            list-style: none;
+        }
+        nav ul li a{
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+        }
+        .name{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+            font-family: lucida Calligraphy;
+
+            font-size: 35px;
+
+            
+        }
+        .name1{
+            color: red;
+
+        }
+        .name2{
+            color: white;
+        }
+        .dona-btn{
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+           
+        }
+        .dona-btn a{
+            width: 100%;
+            height: 100%;
+            color: rgb(255, 255, 255);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bolder;
+            height: 10vh;
+            background-color: rgb(0, 0, 0);
+            font-size: 20px;
+            text-decoration: none;
+                
+        }
+       .drop .donation-content {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+           
+        }    
+        .donation-content {
+            display: none;
+            position: absolute;
+            background-color: #686363;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-top: -20px;
+            margin-left: 30px;
+
+        }
+        .donation-content a {
+            float: none;
+            background-color: rgb(71, 67, 67);
+            color: rgb(255, 255, 255);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bolder;
+            font-size: 19px;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            
+        }  
+        
+        .donation-content a:hover{
+            color: black;
+            background-color: rgba(88, 81, 81, 0);
+            border-radius: 10%;
+            transition: 1s;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        .drop:hover .donation-content{
+            display: block;
+            
+        } 
+
+        /* Main content container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Center header content vertically and horizontally */
+        header {
+            background-color: #ff0000; /* Red header background */
+            color: #fff; /* White text color */
+            text-align: center;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer{
+            /* border:  2px solid black; */
+            width: 100vw;
+            height: 360px;
+
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: space-evenly;
+            background-color: white;
+            margin-top: 6vh;
+        }
+        .foot{
+            display: flex;
+            flex-direction: row;
+
+        }
+        
+        #rec,#oth{
+            height: 260px;
+            width: 500px;
+            
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* align-items; */
+            color: #000;
+
+            
+
+        }
+       
+        .name11{
+            font-size: 30px;
+            text-align: center;
+
+
+        }
+        
+        .c1{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .c2{
+            display: flex;
+            flex-direction: row;
+            justify-content:space-around;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        i{
+            font-size: 40px;
+            
+        }
+        #tw{
+            color: rgba(57,147,235,255);
+        }
+        #em{
+            color:rgba(248,68,55,255) ;
+        }
+        #gi{
+            margin-left: 10px;
+            color: rgba(0,0,0,255);
+        }
+        #li{
+            margin-left: 20px;
+            color:rgba(0,123,181,255) ;
+        }
+
+        #wh{
+            color:rgb(54, 187, 34);
+        }
+        #ph{
+            color:rgba(0,0,0,255) ;
+        }
+        #fa{
+            color:rgba(24,119,242,255) ;
+        }
+        #in{
+            margin-left: 5px;
+            color:rgba(154,76,195,255);
+        }
+        #tw:hover ,#em:hover ,#gi:hover ,#li:hover ,#wh:hover ,#ph:hover ,#fa:hover ,#in:hover{
+            font-size: 53px;
+            transition: 2s;
+        }
+
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            height: 95vh;
+            width: 100vw;
+            margin-top: 10vh;
+
+        }
+        .con1{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* justify-content: center; */
+            height:100vh;
+            width: 50vw;
+            border-radius: 20px;
+            box-shadow:3px 3px 30px white , 3px 3px 30px white;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            
+        }
+        .con2 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+            width: 50vw;
+            border-radius: 20px;
+            box-shadow:3px 3px 30px white , 3px 3px 30px white;
+            background-color: rgb(0, 0, 0);
+
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            height:300px;
+            /* margin-top: 0vh; */
+            /* background-color: aliceblue; */
+
+        }
+
+
+        .con2 img {
+            border-radius: 20px;
+            height: 100vh;
+            width: 83vh; 
+
+        }
+        input {
+            height: 40px;
+            width: 385px;
+        }
+        input,
+        input::placeholder {
+           
+            font-size: 18px;
+
+
+        }
+        input[type=date]::-webkit-calendar-picker-indicator {
+            /* margin-left: 100px; */
+            font-size: 38px;
+
+        
+        }
+
+        select{
+            height: 40px;
+            width: 170px;
+        
+            font-size: 18px;
+
+        }
+        select option {
+          
+            font-size: 18px;
+
+
+        }
+        #reverse{
+            
+            font-size: 35px;
+        }
+        button {
+            height: 45px;
+            width: 130px;
+            border: 2px solid black;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        
+        
+        .route{
+            height: 380px;
+            width: 500px;
+            /* border: 2px solid rgb(255, 255, 255); */
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-top: -5vh;
+
+        }
+       
+        .bus-img{
+            height: 200px;
+            width: 200px;
+            border: 2px solid white;
+            border-radius: 20px;
+        }
+        .logo_body img{
+            height: 110px;
+            width:110px;
+            border-radius: 50%;
+            
+            top:80px;
+            right: 8px;
+            position: fixed;
+            z-index: 10; 
+            
+        }
+
+        
+        
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <div class="whole">
+        <div class="top">
+            <nav>
+                <ul>
+                    <li class="name"><span class="name1">Explore</span> <span class="name2">Epic</span><span class="name1">...</span></li>
+                    <div class="options">
+                        <li><a class="active" href="/home" target="_self" title="Home">Home</a></li>
+                        <li><a class="active" href="/explore" target="_self" title="Explore Tirupati">Explore</a></li>
+                        <div class="drop">
+                            <p class="dona-btn" ><a class="active" class="dona-btn-a" href="/nearby" target="_self" title="Nearby Places to VISIT">Nearby</a></p>
+                            <div class="donation-content">
+                                <a href="/chikkamagaluru">Chikkamagaluru</a>
+                                <a href="/coimbatore">Coimbtore</a>
+                                <a href="/kanchi">Kanchi</a>
+                                <a href="/madhurai" >Madhurai</a>
+                                <a href="/madikeri">Madikeri</a>
+                                <a href="/mysore"> Mysore</a>
+                                <a href="/padmanaba">Anantha Padmanaba </a>
+                                <a href="/sriharikota">Sri Hari Kota  </a>
+                                <a href="/wayanad">Wayanad</a>
+    
+                            </div>
+                        </div>
+                        <li><a class="active" href="/transport" target="_self" title="Tranport Facility">Transport</a></li>
+                        <li><a class="active" href="/contact"target="_self" title="In order to Contact us">Contact</a></li>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+        <div class="middle">
+            <div class="container">
+              
+                    <div class="con1">
+                       <div>
+                        <center><h1>Bus Enquire</h1></center>
+                       <form>
+                            <center>
+                                
+                                <input type="date" id="travelDate" placeholder="Date">
+                                <!-- <input>  ffffffff -->
+                            </center>
+                            <center>
+                                    <select id="from" name="from">
+                                        <option value="">Select Departure</option>
+                                    </select>
+
+                                    <span id="reverse">&#8596;</span>
+
+                                    <select id="to" name="to">
+                                        <option value="">Select Destination</option>
+                                    </select>
+                            </center>
+                            <center>
+                                <button type="button" id="searchButton">Search Buses</button>
+                            </center>
+                        </form>
+                       </div>
+                        <div id="busList">
+            
+                        </div>
+                        <div id="error-message"></div>
+
+                    </div>
+                <div class="con2">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg">
+                </div>
+            </div>
+        </div>
+        <p class="logo_body"><img src="https://cdn.glitch.global/74966f89-6b4a-4631-ad79-95f11a65e0dd/logo11.jpg?v=1697535569992" alt="">
+    </div>
+   
+
+    <footer>
+        <div><center><h1 style="color:black; font-size: xx-large;">... Get in Touch</h1></center>
+        </div>
+        <div class="foot">
+          <div id="rec">
+            <p class="name11"><strong>Recommeended</strong></p>
+            
+            <div class="c2">
+                <div class="c1">
+                    <a href="https://twitter.com/A1264M"><i class="fa-brands fa-square-twitter" id="tw"></i></a>
+                    <em>kundhumaddisetti</em>
+                </div>
+            
+                <div class="c1">
+                    <a href="https://mail.google.com/mail/u/0/#inbox"><i class="fa-regular fa-envelope" id="em"></i></a>
+                    <em>moni2003@gmail.com</em>
+                </div>
+            </div>
+            
+            <div class="c2">
+                <div class="c1">
+                    <a href="https://github.com/kundhanamaddisetti"><i class="fa-brands fa-github" id="gi"></i></a>
+                    <em>kundhanamaddisetti</em>
+                </div>
+    
+                <div class="c1">
+                    <a href="https://www.linkedin.com/in/kundhana-lalitha-naga-sri-maddisetti-197b73239/"><i class="fa-brands fa-linkedin" id="li"></i></a>
+                    <em>Kundhana</em>
+                </div>
+            </div>
+            
+  
+            
+        </div>
+        
+        <div id="oth">
+            <p class="name11"><strong>Other methods</strong></p>
+            <div class="c2">
+                <div class="c1">
+                    <a href="#"><i class="fa-brands fa-square-whatsapp" id="wh"></i></a>
+                    <em>xxxxx 18101</em>
+                </div>
+                <div class="c1">
+                    <a href="#"><i class="fa-solid fa-phone" id="ph"></i></a>
+                    <em>xxxxx 18101</em>
+                </div>
+            </div>
+            
+            
+            <div class="c2">
+                <div class="c1">
+                    <a href="https://www.facebook.com/profile.php?id=100075638365796&mibextid=ZbWKwL"><i class="fa-brands fa-facebook" id="fa"></i></a>
+                    <em>Parameswari Jagarlamudi</em>
+                </div>
+                <div class="c1">
+                    <a href="https://instagram.com/kundhuu19?utm_source=qr&igshid=OGU0MmVlOWVjOQ=="><i class="fa-brands fa-instagram" id="in"></i></a>
+                    <em>kundhana</em>
+                </div>
+            </div>
+        </div>
+        </div>
+   </footer>
+  
+
+
+
+    <script>
+        // JSON data
+        const jsonData = 
+        [
+  {
+    "sl_no": "461",
+    "depot": "CC",
+    "route_no_": "965UD",
+    "from": "TIRUPATHI",
+    "to": "AVUDAIARKOIL",
+    "route_length": "494",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "20.3",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "462",
+    "depot": "CC",
+    "route_no_": "911UD",
+    "from": "TIRUPATHI",
+    "to": "CHENNAI",
+    "route_length": "160",
+    "type": "ULTRA",
+    "no_of_service": "4",
+    "departure_timings": "06.00,07.00,15.30,16.00",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "463",
+    "depot": "CBE",
+    "route_no_": "962UD",
+    "from": "TIRUPATHI",
+    "to": "COIMBATORE",
+    "route_length": "503",
+    "type": "ULTRA",
+    "no_of_service": "3",
+    "departure_timings": "18.30,19.30,20.45",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "464",
+    "depot": "KKDI",
+    "route_no_": "969UD",
+    "from": "TIRUPATHI",
+    "to": "KARAIKUDI",
+    "route_length": "526",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "21",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "465",
+    "depot": "SLM",
+    "route_no_": "856UD",
+    "from": "TIRUPATHI",
+    "to": "KARUR",
+    "route_length": "437",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "21.15",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "466",
+    "depot": "KKM",
+    "route_no_": "851KU",
+    "from": "TIRUPATHI",
+    "to": "KUMBAKONAM",
+    "route_length": "392",
+    "type": "ULTRA",
+    "no_of_service": "2",
+    "departure_timings": "07.00,18.40",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "467",
+    "depot": "MDU",
+    "route_no_": "966TU",
+    "from": "TIRUPATHI",
+    "to": "MADURAI",
+    "route_length": "522",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "19.45",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "468",
+    "depot": "MDU",
+    "route_no_": "966UD",
+    "from": "TIRUPATHI",
+    "to": "MADURAI",
+    "route_length": "529",
+    "type": "ULTRA",
+    "no_of_service": "2",
+    "departure_timings": "19.11,20.00",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "469",
+    "depot": "NGL",
+    "route_no_": "995UD",
+    "from": "TIRUPATHI",
+    "to": "NAGERCOIL",
+    "route_length": "761",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "14.3",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "470",
+    "depot": "CC",
+    "route_no_": "853UD",
+    "from": "TIRUPATHI",
+    "to": "PATTUKOTTAI",
+    "route_length": "444",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "21.15",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "471",
+    "depot": "SLM",
+    "route_no_": "849UD",
+    "from": "TIRUPATHI",
+    "to": "SALEM",
+    "route_length": "334",
+    "type": "ULTRA",
+    "no_of_service": "5",
+    "departure_timings": "06.30,08.30,09.30,10.00,22.00",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "472",
+    "depot": "SHN",
+    "route_no_": "990UD",
+    "from": "TIRUPATHI",
+    "to": "SHENCOTTAH",
+    "route_length": "700",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "15.3",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "473",
+    "depot": "TRY",
+    "route_no_": "852UD",
+    "from": "TIRUPATHI",
+    "to": "SRIRANGAM",
+    "route_length": "407",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "7.3",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "474",
+    "depot": "TNJ",
+    "route_no_": "851TU",
+    "from": "TIRUPATHI",
+    "to": "THANJAVUR",
+    "route_length": "448",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "20.3",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "475",
+    "depot": "TNJ",
+    "route_no_": "851UD",
+    "from": "TIRUPATHI",
+    "to": "THANJAVUR",
+    "route_length": "420",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "19.45",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "476",
+    "depot": "TCN",
+    "route_no_": "981UD",
+    "from": "TIRUPATHI",
+    "to": "TIRUCHENDUR",
+    "route_length": "752",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "17.3",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "477",
+    "depot": "TNVA",
+    "route_no_": "983UD",
+    "from": "TIRUPATHI",
+    "to": "TIRUNELVELI",
+    "route_length": "692",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "17.3",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "478",
+    "depot": "TNVB",
+    "route_no_": "984UD",
+    "from": "TIRUPATHI",
+    "to": "TIRUNELVELI",
+    "route_length": "626",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "18.3",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "479",
+    "depot": "SLM",
+    "route_no_": "835TU",
+    "from": "TIRUPATHI",
+    "to": "TIRUPPUR",
+    "route_length": "460",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "20.16",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "480",
+    "depot": "MDU",
+    "route_no_": "970UD",
+    "from": "TIRUPATHI",
+    "to": "TIRUTHANGAL",
+    "route_length": "602",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "18",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "481",
+    "depot": "TRY",
+    "route_no_": "850UD",
+    "from": "TIRUPATHI",
+    "to": "TRICHY",
+    "route_length": "407",
+    "type": "ULTRA",
+    "no_of_service": "5",
+    "departure_timings": "05.30,08.45,09.30,18.30,21.45",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "8",
+    "depot": "CC",
+    "route_no_": "965UD",
+    "from": "AVUDAIYAR KOIL",
+    "to": "TIRUPATHI",
+    "route_length": "494",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "19",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "156",
+    "depot": "KKDI",
+    "route_no_": "911UD",
+    "from": "CHENNAI",
+    "to": "TIRUPATHI",
+    "route_length": "160",
+    "type": "ULTRA",
+    "no_of_service": "4",
+    "departure_timings": "06.00,06.30,15.30,16.00",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "204",
+    "depot": "CBE",
+    "route_no_": "962UD",
+    "from": "COIMBATORE",
+    "to": "TIRUPATHI",
+    "route_length": "503",
+    "type": "ULTRA",
+    "no_of_service": "3",
+    "departure_timings": "18.30,19.30,20.15",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "263",
+    "depot": "KKDI",
+    "route_no_": "969UD",
+    "from": "KARAIKUDI",
+    "to": "TIRUPATHI",
+    "route_length": "526",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "17.3",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "267",
+    "depot": "SLM",
+    "route_no_": "856UD",
+    "from": "KARUR",
+    "to": "TIRUPATHI",
+    "route_length": "437",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "20.3",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "291",
+    "depot": "KKM",
+    "route_no_": "851KU",
+    "from": "KUMBAKONAM",
+    "to": "TIRUPATHI",
+    "route_length": "392",
+    "type": "ULTRA",
+    "no_of_service": "2",
+    "departure_timings": "07.00,19.45",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "302",
+    "depot": "MDU",
+    "route_no_": "966TU",
+    "from": "MADURAI",
+    "to": "TIRUPATHI",
+    "route_length": "522",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "16",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "303",
+    "depot": "MDU",
+    "route_no_": "966UD",
+    "from": "MADURAI",
+    "to": "TIRUPATHI",
+    "route_length": "529",
+    "type": "ULTRA",
+    "no_of_service": "2",
+    "departure_timings": "18.40,20.00",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "332",
+    "depot": "NGL",
+    "route_no_": "995UD",
+    "from": "NAGERCOIL",
+    "to": "TIRUPATHI",
+    "route_length": "761",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "12.45",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "358",
+    "depot": "CC",
+    "route_no_": "853UD",
+    "from": "PATTUKOTTAI",
+    "to": "TIRUPATHI",
+    "route_length": "444",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "18.3",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "401",
+    "depot": "SLM",
+    "route_no_": "849UD",
+    "from": "SALEM",
+    "to": "TIRUPATHI",
+    "route_length": "334",
+    "type": "ULTRA",
+    "no_of_service": "5",
+    "departure_timings": "09.30,20.30,21.00,21.30,22.00",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "417",
+    "depot": "SHN",
+    "route_no_": "990UD",
+    "from": "SHENCOTTAH",
+    "to": "TIRUPATHI",
+    "route_length": "700",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "12",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "423",
+    "depot": "TRY",
+    "route_no_": "852UD",
+    "from": "SRIRANGAM",
+    "to": "TIRUPATHI",
+    "route_length": "407",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "19.5",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "430",
+    "depot": "TNJ",
+    "route_no_": "851TU",
+    "from": "THANJAVUR",
+    "to": "TIRUPATHI",
+    "route_length": "448",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "16.3",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "431",
+    "depot": "TNJ",
+    "route_no_": "851UD",
+    "from": "THANJAVUR",
+    "to": "TIRUPATHI",
+    "route_length": "420",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "20",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "443",
+    "depot": "TCN",
+    "route_no_": "981UD",
+    "from": "TIRUCHENDUR",
+    "to": "TIRUPATHI",
+    "route_length": "752",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "13.3",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "458",
+    "depot": "TNVA",
+    "route_no_": "983UD",
+    "from": "TIRUNELVELI",
+    "to": "TIRUPATHI",
+    "route_length": "692",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "15.15",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "459",
+    "depot": "TNVB",
+    "route_no_": "984UD",
+    "from": "TIRUNELVELI",
+    "to": "TIRUPATHI",
+    "route_length": "626",
+    "type": "ULTRA",
+    "no_of_service": "1",
+    "departure_timings": "16.3",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/YX68ULW.jpg"
+  },
+  {
+    "sl_no": "496",
+    "depot": "TRY",
+    "route_no_": "850UD",
+    "from": "TRICHY",
+    "to": "TIRUPATHI",
+    "route_length": "407",
+    "type": "ULTRA",
+    "no_of_service": "5",
+    "departure_timings": "08.00,09.00,19.00,20.30,21.30",
+    "image_url": "https://thenewsmill.com/wp-content/uploads/2021/08/Volvo-Buses-India-launches-countrys-first-13.5m-4x2-coach.jpg"
+  }
+        ];
+
+        document.addEventListener("DOMContentLoaded", function () {
+    function populateDropdowns(data) {
+        const fromSelect = document.getElementById('from');
+        const toSelect = document.getElementById('to');
+
+        // Extract unique departure and destination places
+        const uniqueDepartures = [...new Set(data.map(bus => bus.from))];
+        const uniqueDestinations = [...new Set(data.map(bus => bus.to))];
+
+        // Populate 'from' dropdown
+        uniqueDepartures.forEach(departure => {
+            const optionFrom = document.createElement('option');
+            optionFrom.value = departure;
+            optionFrom.textContent = departure;
+            fromSelect.appendChild(optionFrom);
+        });
+
+        // Populate 'to' dropdown with unique destinations
+        uniqueDestinations.forEach(destination => {
+            const optionTo = document.createElement('option');
+            optionTo.value = destination;
+            optionTo.textContent = destination;
+            toSelect.appendChild(optionTo);
+        });
+    }
+
+    function clearErrorMessage() {
+        errorMessage.textContent = '';
+    }
+
+    // Populate 'from' and 'to' dropdowns
+    populateDropdowns(jsonData);
+
+    // Reverse 'from' and 'to'
+    const reverseButton = document.getElementById('reverse');
+    reverseButton.addEventListener('click', () => {
+        const fromSelect = document.getElementById('from');
+        const toSelect = document.getElementById('to');
+        const temp = fromSelect.value;
+        fromSelect.value = toSelect.value;
+        toSelect.value = temp;
+    });
+
+    // Search for buses
+    const busBookingForm = document.getElementById('busBookingForm');
+    const busList = document.getElementById('busList');
+    const searchButton = document.getElementById('searchButton');
+    const errorMessage = document.getElementById('error-message'); // Error message div
+
+    searchButton.addEventListener('click', () => {
+        const travelDate = document.getElementById('travelDate').value;
+        const selectedFrom = document.getElementById('from').value;
+        const selectedTo = document.getElementById('to').value;
+
+        // Check if neither departure nor arrival is "Tirupati"
+        if (selectedFrom === selectedTo) {
+            errorMessage.textContent = 'Please change either the departure or arrival location.';
+            errorMessage.style.color = 'red';
+            return; // Stop further execution
+        }   
+        else if (selectedFrom.toLowerCase() !== 'tirupathi' && selectedTo.toLowerCase() !== 'tirupathi') {
+            errorMessage.textContent = 'Please select either departure or arrival as Tirupati.';
+            errorMessage.style.color = 'red';
+            return; // Stop further execution
+        } else {
+            clearErrorMessage(); // Clear error message
+        }
+
+        // Filter data based on selected options
+        const filteredBuses = jsonData.filter(bus => bus.from === selectedFrom && bus.to === selectedTo);
+
+        // Clear existing bus list
+        busList.innerHTML = '';
+
+        // Display results
+        filteredBuses.forEach(bus => {
+            const busCard = document.createElement('div');
+            busCard.classList.add('bus-card');
+            busCard.innerHTML = `
+                <div class="route">
+                    <img class="bus-img" src="${bus.image_url}" alt="Bus">
+                    <h3>Route: ${bus.from} to ${bus.to}</h3>
+                    <p>Departure Time: ${bus.departure_timings}</p>
+                </div>
+            `;
+            busList.appendChild(busCard);
+        });
+    });
+});
+
+</script>
+</body>
+</html>

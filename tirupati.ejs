@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels in Tirupati</title>
+    <link rel="icon" href="https://cdn.glitch.global/74966f89-6b4a-4631-ad79-95f11a65e0dd/logo7.jpg?v=1697534616110" type="icon-x/image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"  />
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 20px 0;
+            color: #333;
+        }
+
+        /* Container styles for hotels */
+        .hotel-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; /* Adjust the alignment */
+        }
+
+        /* Individual hotel container styles */
+        .hotel-container {
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            padding: 20px; /* Increased padding for more content space */
+            margin: 10px;
+            border: 3px solid silver;
+            width: 400px; /* Adjust the width for three cards in a row */
+            height: 500px; /* Increased the height of the cards */
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .hotel-container:hover {
+            transform: scale(1.02);
+        }
+
+        .hotel-container img {
+            width: 100%;
+            height: 200px; /* Set a fixed height for all images */
+            object-fit: cover; /* Maintain the aspect ratio and cover the space */
+            border-radius: 30px;
+            border: 3px solid silver;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px; /* Increased font size */
+            margin: 10px 0;
+        }
+
+        p {
+            color: #666;
+            margin: 10px 0; /* Increased margin for spacing */
+            font-size: 18px; /* Increased font size */
+        }
+
+        /* Style for the hotel ratings */
+        .hotel-ratings {
+            color: #ff6600;
+            font-weight: bold;
+        }
+
+        /* Style for the price */
+        .hotel-price {
+            color: black;
+            font-weight: bold;
+            font-size: 20px; /* Increased font size */
+        }
+        
+        nav {
+      background-color: black;
+      width: 100vw;
+      height: 10vh;
+      top: 0px;
+      left: 0px;
+      position: fixed;
+    }
+
+    .options {
+      color: white;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      width: 50vw;
+      height: 10vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .options li,
+    .dona-btn a {
+      color: white;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-weight: bolder;
+      height: 10vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .options li a:hover,
+    .dona-btn a:hover {
+      color: black;
+      background-color: white;
+      height: 9vh;
+      border-radius: 10%;
+      transition: 1s;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    nav li {
+      list-style: none;
+    }
+
+    nav ul li a {
+      font-size: 20px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .name{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+            font-family: lucida Calligraphy;
+            margin-top: 2vh;
+            margin-left: 3vw;
+            font-size: 35px;
+
+            
+        }
+        .name1{
+            color: red;
+
+        }
+        .name2{
+            color: white;
+        }
+
+    .dona-btn {
+      width: 100%;
+      background-color: rgb(0, 0, 0);
+    }
+
+    .dona-btn a {
+      width: 100%;
+      height: 100%;
+      color: rgb(255, 255, 255);
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-weight: bolder;
+      height: 10vh;
+      background-color: rgb(0, 0, 0);
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .drop .donation-content {
+      font-size: 16px;
+      border: none;
+      outline: none;
+    }
+
+    .donation-content {
+      display: none;
+      position: absolute;
+      background-color: #686363;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      margin-top: -20px;
+      margin-left: 30px;
+    }
+
+    .donation-content a {
+      float: none;
+      background-color: rgb(71, 67, 67);
+      color: rgb(255, 255, 255);
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-weight: bolder;
+      font-size: 19px;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .donation-content a:hover {
+      color: black;
+      background-color: rgba(88, 81, 81, 0);
+      border-radius: 10%;
+      transition: 1s;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .drop:hover .donation-content {
+      display: block;
+    }
+
+    
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+    .slide-container .prev,
+.slide-container .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  /* margin-top: 22px; */
+  padding: 16px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 20px;
+  transition: all 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(255, 255, 255, 0.651);
+      
+}
+
+.slide-container .prev:hover,
+.slide-container .next:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+
+.slide-container .prev {
+  left: 40px;
+    
+
+}
+
+
+.slide-container .next {
+  right: 40px;
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.dots-container .dot {
+  cursor: pointer;
+  margin: 5px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+}
+
+.dots-container .dot.active {
+  border: 2px solid red;
+}
+
+* {
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.slide-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1700px;
+  margin: auto;
+  /* position: relative; */
+/* background-color: red; */
+    height: 70vh;
+    width: 95vw;
+    margin-top: 20vh;
+    
+    border-radius: 0px;
+}
+
+.slide-container .slide {
+  display: none;
+  width: 100%;
+}
+
+.slide-container .slide.fade {
+  animation: fade 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.slide-container .slide img {
+  width: 100%;
+}
+
+.imgc1 {
+    height: 700px;
+    width: 1700px;
+    border-radius: 0px 0px 30px 30px;
+    border: 2px solid white;
+
+    
+}
+.middle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    width: 95vw;
+    margin-bottom: 10vh;
+
+    /* border: 0px solid black; */
+    /* background-color: aqua; */
+    margin-top: 40vh;  
+    /* position: relative; */
+    
+    
+    
+  }
+  
+  .bottom{
+  box-shadow: 3px 0px 25px rgb(255, 255, 255),3px 0px 25px rgb(255, 255, 255);
+    /* top:800px; */
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border:0px;
+    margin-bottom: 10vh;
+    width: 95vw;
+    height: 245vh;
+}
+.whole{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: 500vh; */
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+    /* border: 2px solid rgb(255, 255, 255); */
+    color: rgb(255, 255, 255);
+    height: 30vh;
+    width: 95vw;
+    border-radius: 10px;
+    
+    
+}
+.content_p{
+  /* border: 2px solid rgb(255, 255, 255); */
+  height: 30vh;
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+   border-radius: 50%;
+   font-size: 25px;
+   padding: 10px 30px 10px 30px;
+
+}
+.place_name{
+    font-size: 40px;
+    font-family: Lucida Calligraphy;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+}
+.btn{
+            height: 45px;
+            width: 100px;
+            border: 2px solid silver;
+            border-radius: 4px;
+        }
+
+        footer{
+            /* border:  2px solid black; */
+            width: 100vw;
+            height: 360px;
+
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: space-evenly;
+            background-color: white;
+            margin-top: 6vh;
+        }
+        .foot{
+            display: flex;
+            flex-direction: row;
+
+        }
+        
+        #rec,#oth{
+            height: 260px;
+            width: 500px;
+            
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* align-items; */
+            color: #000;
+
+            
+
+        }
+       
+        .name11{
+            font-size: 30px;
+            text-align: center;
+
+
+        }
+        
+        .c1{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .c2{
+            display: flex;
+            flex-direction: row;
+            justify-content:space-around;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        i{
+            font-size: 40px;
+            
+        }
+        #tw{
+            color: rgba(57,147,235,255);
+        }
+        #em{
+            color:rgba(248,68,55,255) ;
+        }
+        #gi{
+            margin-left: 10px;
+            color: rgba(0,0,0,255);
+        }
+        #li{
+            margin-left: 20px;
+            color:rgba(0,123,181,255) ;
+        }
+
+        #wh{
+            color:rgb(54, 187, 34);
+        }
+        #ph{
+            color:rgba(0,0,0,255) ;
+        }
+        #fa{
+            color:rgba(24,119,242,255) ;
+        }
+        #in{
+            margin-left: 5px;
+            color:rgba(154,76,195,255);
+        }
+        #tw:hover ,#em:hover ,#gi:hover ,#li:hover ,#wh:hover ,#ph:hover ,#fa:hover ,#in:hover{
+            font-size: 53px;
+            transition: 2s;
+        }
+    
+        .slide h1{
+          position: absolute;
+          top:80px;
+          left: 50px;
+          font-size: 30px;
+          font-family:'Times New Roman', Times, serif;
+          background-color: black;
+          color: white;
+        }
+  </style>
+</head>
+<body>
+    <div class="whole">
+      <div class="top">
+        <nav>
+            <ul>
+              <li class="name"><span class="name1">Explore</span> <span class="name2">Epic</span><span class="name1">...</span></li>
+                <div class="options">
+                    <li><a class="active" href="/home" target="_self" title="Home">Home</a></li>
+                    <li><a class="active" href="/explore" target="_self" title="Explore Tirupati">Explore</a></li>
+                    <div class="drop">
+                        <p class="dona-btn" ><a class="active" class="dona-btn-a" href="/nearby" target="_self" title="Nearby Places to VISIT">Nearby</a></p>
+                        <div class="donation-content">
+                            <a href="/chikkamagaluru">Chikkamagaluru</a>
+                            <a href="/coimbatore">Coimbtore</a>
+                            <a href="/kanchi">Kanchi</a>
+                            <a href="/madhurai" >Madhurai</a>
+                            <a href="/madikeri">Madikeri</a>
+                            <a href="/mysore"> Mysore</a>
+                            <a href="/padmanaba">Anantha Padmanaba </a>
+                            <a href="/sriharikota">Sri Hari Kota  </a>
+                            <a href="/wayanad">Wayanad</a>
+
+                        </div>
+                    </div>
+                    <li><a class="active" href="/transport" target="_self" title="Tranport Facility">Transport</a></li>
+                    <li><a class="active" href="/contact"target="_self" title="In order to Contact us">Contact</a></li>
+                </div>
+            </ul>
+        </nav>
+    </div>
+    <center>
+      <div id="middle">
+        <div class="slide-container">
+            <div class="slide fade">
+                <h1>Tirupati</h1>
+                <img class="imgc1" src="https://cdn.glitch.global/74966f89-6b4a-4631-ad79-95f11a65e0dd/background1.jpg?v=1697539613717" alt=''>
+            </div>
+            <div class="slide fade">
+                <h1>Chandragiri Fort</h1>
+                <img class="imgc1" src="https://i0.wp.com/aravindgundumane.com/wp-content/uploads/2019/09/DSC_3905.jpg?resize=1140%2C760&ssl=1" alt=''>
+            </div>
+            <div class="slide fade">
+                <h1>Geetopadesam Park</h1>
+                <img class="imgc1" src="https://cdn.glitch.global/e03ff2e9-a998-4f89-bd9d-4f165ff29f7e/WhatsApp%20Image%202023-10-16%20at%2016.05.31_f79b6744.jpg?v=1697452628708" alt=''>
+            </div>
+            <div class="slide fade">
+                <h1>Iskcon Temple</h1>
+                <img class="imgc1" src="https://www.hoteldekho.com/storage/img/tourattraction/1661590746925862301s.jpg" alt=''>
+            </div>
+            <div class="slide fade">
+                <h1>Sri Venkateswara Museum</h1>
+                <img class="imgc1" src="https://4.bp.blogspot.com/-h88k5EO-bC4/XDBjC75F4rI/AAAAAAABP6s/WsEh6Do5XU8iLNv58dSoLPKuW4JSP4QIACLcBGAs/s1600/IMG_1868.JPG" alt=''>
+            </div>
+    
+          <a href="#" class="prev" title="Previous">&#10094</a>
+          <a href="#" class="next" title="Next">&#10095</a>
+        </div>
+        <div class="dots-container">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+  </center>
+ 
+   
+    <div class="bottom">
+      <h1>Hotels in Tirupati</h1>
+      <div class="hotel-list">
+          <% hotels.forEach((hotel) => { %>
+              <div class="hotel-container">
+                  <img src="<%= hotel.image %>" alt="<%= hotel.name %>" />
+                  <h2><%= hotel.name %></h2>
+                  <p><%= hotel.location %></p>
+                  <p class="hotel-ratings">Ratings: <%= hotel.ratings %></p>
+                  <p><%= hotel.stars %> stars</p>
+                  <p><%= hotel.reviews %> reviews</p>
+                  <p class="hotel-price">Price: ₹<%= hotel.price %></p>
+                  <a href="http://localhost:3003/contact"><button class="btn">Book Now</button></a>
+              </div>
+          <% }); %>
+      </div>
+    </div>
+    </div>
+    <footer>
+      <div><center><h1 style="color:black; font-size: xx-large;">... Get in Touch</h1></center>
+      </div>
+      <div class="foot">
+        <div id="rec">
+          <p class="name11"><strong>Recommeended</strong></p>
+          
+          <div class="c2">
+              <div class="c1">
+                  <a href="https://twitter.com/A1264M"><i class="fa-brands fa-square-twitter" id="tw"></i></a>
+                  <em>kundhumaddisetti</em>
+              </div>
+          
+              <div class="c1">
+                  <a href="https://mail.google.com/mail/u/0/#inbox"><i class="fa-regular fa-envelope" id="em"></i></a>
+                  <em>moni2003@gmail.com</em>
+              </div>
+          </div>
+          
+          <div class="c2">
+              <div class="c1">
+                  <a href="https://github.com/kundhanamaddisetti"><i class="fa-brands fa-github" id="gi"></i></a>
+                  <em>kundhanamaddisetti</em>
+              </div>
+  
+              <div class="c1">
+                  <a href="https://www.linkedin.com/in/kundhana-lalitha-naga-sri-maddisetti-197b73239/"><i class="fa-brands fa-linkedin" id="li"></i></a>
+                  <em>Kundhana</em>
+              </div>
+          </div>
+          
+
+          
+      </div>
+      
+      <div id="oth">
+          <p class="name11"><strong>Other methods</strong></p>
+          <div class="c2">
+              <div class="c1">
+                  <a href="#"><i class="fa-brands fa-square-whatsapp" id="wh"></i></a>
+                  <em>xxxxx 18101</em>
+              </div>
+              <div class="c1">
+                  <a href="#"><i class="fa-solid fa-phone" id="ph"></i></a>
+                  <em>xxxxx 18101</em>
+              </div>
+          </div>
+          
+          
+          <div class="c2">
+              <div class="c1">
+                  <a href="https://www.facebook.com/profile.php?id=100075638365796&mibextid=ZbWKwL"><i class="fa-brands fa-facebook" id="fa"></i></a>
+                  <em>Parameswari Jagarlamudi</em>
+              </div>
+              <div class="c1">
+                  <a href="https://instagram.com/kundhuu19?utm_source=qr&igshid=OGU0MmVlOWVjOQ=="><i class="fa-brands fa-instagram" id="in"></i></a>
+                  <em>kundhana</em>
+              </div>
+          </div>
+      </div>
+      </div>
+ </footer>
+
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".slide");
+      const dots = document.querySelectorAll(".dot");
+
+      const init = (n) => {
+      slides.forEach((slide, index) => {
+          slide.style.display = "none";
+          dots.forEach((dot, index) => {
+          dot.classList.remove("active");
+          });
+      });
+      slides[n].style.display = "block";
+      dots[n].classList.add("active");
+      };
+      document.addEventListener("DOMContentLoaded", init(currentSlide));
+      const next = () => {
+      currentSlide >= slides.length - 1 ? (currentSlide = 0) : currentSlide++;
+      init(currentSlide);
+      };
+
+      const prev = () => {
+      currentSlide <= 0 ? (currentSlide = slides.length - 1) : currentSlide--;
+      init(currentSlide);
+      };
+
+      document.querySelector(".next").addEventListener("click", next);
+
+      document.querySelector(".prev").addEventListener("click", prev);
+
+      setInterval(() => {
+      next();
+      }, 5000);
+
+      dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+          console.log(currentSlide);
+          init(i);
+          currentSlide = i;
+      });
+      });
+  </script>
+</body>
+</html>

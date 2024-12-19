@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurant Page</title>
+    <link rel="icon" href="https://cdn.glitch.global/74966f89-6b4a-4631-ad79-95f11a65e0dd/logo7.jpg?v=1697534616110" type="icon-x/image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"  />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #000000;
+            margin: 10;
+            padding: 0;
+        }
+
+        header {
+           
+            color: #000000;
+            text-align: center;
+            padding: 20px;
+        }
+        
+
+        .restaurant-container {
+            background-color: #ffffff;
+            border: 3px solid rgb(0, 0, 0);
+            border-radius: 30px;
+            margin: 20px;
+            padding: 20px;
+            width: 400px;
+            display: inline-block;
+            vertical-align: top;
+            transition: transform 1.3s;
+            color: black;
+        }
+
+        .restaurant-container:hover {
+            transform: scale(1.05);
+        }
+
+        .restaurant-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s;
+            border: 3px solid rgb(0, 0, 0);
+            border-radius: 30px;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        .restaurant-details {
+            margin-top: 10px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: red;
+            transition: color 0.3s;
+            font-size: 30px;
+        }
+
+        a:hover {
+            color: red;
+        }
+        nav{
+            background-color: black; 
+            width:100vw;
+            height: 10vh;
+            top:0px;
+            left:0px;
+            position: fixed;
+            
+        }
+        .options{
+            color: white;
+            position: absolute;
+            right: 0px;
+            top:0px;
+            width:50vw;
+            height: 10vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        
+        }
+        .options li,.dona-btn a{
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bolder;
+            height: 10vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+        .options li a:hover, .dona-btn  a:hover {
+            color: black;
+            background-color: white;
+            height: 9vh;
+            border-radius: 10%;
+            transition: 1s;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+              
+        }
+        nav li{
+            list-style: none;
+        }
+        nav ul li a{
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+        }
+        .name{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+            font-family: lucida Calligraphy;
+            margin-top: 2vh;
+            margin-left: 3vw;
+            font-size: 35px;
+
+            
+        }
+        .name1{
+            color: red;
+
+        }
+        .name2{
+            color: white;
+        }
+        .dona-btn{
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+           
+        }
+        .dona-btn a{
+            width: 100%;
+            height: 100%;
+            color: rgb(255, 255, 255);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bolder;
+            height: 10vh;
+            background-color: rgb(0, 0, 0);
+            font-size: 20px;
+            text-decoration: none;
+                
+        }
+       .drop .donation-content {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+           
+        }    
+        .donation-content {
+            display: none;
+            position: absolute;
+            background-color: #686363;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-top: -20px;
+            margin-left: 30px;
+
+        }
+        .donation-content a {
+            float: none;
+            background-color: rgb(71, 67, 67);
+            color: rgb(255, 255, 255);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bolder;
+            font-size: 19px;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            
+        }  
+        
+        .donation-content a:hover{
+            color: black;
+            background-color: rgba(88, 81, 81, 0);
+            border-radius: 10%;
+            transition: 1s;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        .drop:hover .donation-content{
+            display: block;
+            
+        } 
+        
+        h2 {
+            color: red;
+        }
+        b {
+            font-size: 25px;
+        }
+        .head1 {
+            font-size: 70px;
+        }
+        .bbttnn{
+            border: 2px solid black;
+            border-radius: 5px ;
+            width: 90px;
+            height: 45px;
+        }
+        
+        footer{
+            /* border:  2px solid black; */
+            width: 100vw;
+            height: 360px;
+
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: space-evenly;
+            background-color: white;
+            margin-top: 6vh;
+        }
+        .foot{
+            display: flex;
+            flex-direction: row;
+
+        }
+        
+        #rec,#oth{
+            height: 260px;
+            width: 500px;
+            
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* align-items; */
+            color: #000;
+
+            
+
+        }
+       
+        .name11{
+            font-size: 30px;
+            text-align: center;
+
+
+        }
+        
+        .c1{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .c2{
+            display: flex;
+            flex-direction: row;
+            justify-content:space-around;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        i{
+            font-size: 40px;
+            
+        }
+        #tw{
+            color: rgba(57,147,235,255);
+        }
+        #em{
+            color:rgba(248,68,55,255) ;
+        }
+        #gi{
+            margin-left: 10px;
+            color: rgba(0,0,0,255);
+        }
+        #li{
+            margin-left: 20px;
+            color:rgba(0,123,181,255) ;
+        }
+
+        #wh{
+            color:rgb(54, 187, 34);
+        }
+        #ph{
+            color:rgba(0,0,0,255) ;
+        }
+        #fa{
+            color:rgba(24,119,242,255) ;
+        }
+        #in{
+            margin-left: 5px;
+            color:rgba(154,76,195,255);
+        }
+        #tw:hover ,#em:hover ,#gi:hover ,#li:hover ,#wh:hover ,#ph:hover ,#fa:hover ,#in:hover{
+            font-size: 53px;
+            transition: 2s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="top">
+        <nav>
+            <ul>
+                <li class="name"><span class="name1">Explore</span> <span class="name2">Epic</span><span class="name1">...</span></li>
+                <div class="options">
+                    <li><a class="active" href="/home" target="_self" title="Home">Home</a></li>
+                    <li><a class="active" href="/explore" target="_self" title="Explore Tirupati">Explore</a></li>
+                    <div class="drop">
+                        <p class="dona-btn" ><a class="active" class="dona-btn-a" href="/nearby" target="_self" title="Nearby Places to VISIT">Nearby</a></p>
+                        <div class="donation-content">
+                            <a href="/chikkamagaluru">Chikkamagaluru</a>
+                            <a href="/coimbatore">Coimbtore</a>
+                            <a href="/kanchi">Kanchi</a>
+                            <a href="/madhurai" >Madhurai</a>
+                            <a href="/madikeri">Madikeri</a>
+                            <a href="/mysore"> Mysore</a>
+                            <a href="/padmanaba">Anantha Padmanaba </a>
+                            <a href="/sriharikota">Sri Hari Kota  </a>
+                            <a href="/wayanad">Wayanad</a>
+
+                        </div>
+                    </div>
+                    <li><a class="active" href="/transport" target="_self" title="Tranport Facility">Transport</a></li>
+                    <li><a class="active" href="/contact"target="_self" title="In order to Contact us">Contact</a></li>
+                </div>
+            </ul>
+        </nav>
+    </div>
+    <br><br><br><br>
+    <header>
+        <h1 class="head1">Where Taste Meets Tradition: Explore Tirupati's Culinary Delights</h1>
+        <p><b>Discover Our Delicious Menu</b></p>
+        <br><br><br>
+        <p><b>Restaurant in Tirupati</b></p>
+    </header>
+
+    <div class="restaurant-container">
+        <div class="restaurant-image">
+            <h2><b><center>Hotel Bliss</center></b></h2><br><br>
+            <img src="https://res.cloudinary.com/simplotel/image/upload/w_5000,h_1827/x_1633,y_0,w_3249,h_1827,r_0,c_crop,q_80,fl_progressive/w_500,f_auto,c_fit/hotel-bliss/Bar_in_Tirupati,_Hotel_Bliss,_Dining_in_Tirupati_1" alt="Restaurant 1 Image 1">
+        </div><br><br>
+        <div class="restaurant-details">
+            <p><b>Cuisines:</b> Indian, Asian</p>
+            <p><b>Special Diets:</b> Vegetarian Friendly, Gluten Free Options</p>
+            <p><b>Meals:</b> Dinner, Breakfast, Lunch</p>
+            <p><b>Address:</b> No 45 Renigunta Road Near Ramanuja Circle, Tirupati 517501 India</p>
+            <p><b>Rating:</b> 4.5</p>
+            <p><b>Contact:</b> 9642337773</p><br><br>
+            <center>
+                <a href="https://www.blisstirupati.com/"><button class="bbttnn">Veiw More</button></a>
+            </center>
+        </div>
+    </div>
+    <div class="restaurant-container">
+        <div class="restaurant-image">
+            <h2><b><center>Zodiac</center></b></h2><br><br>
+           <center><img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/16324049.jpg?k=3b79530b9d8097ae877092d4fa02b31fa2ac8d1ae35ad8c45d71a1746b43387d&o=&hp=1" alt="Restaurant 2 Image 1"></center>
+        </div><br><br>
+        <div class="restaurant-details">
+            <p><b>Cuisines:</b> Indian, Asian, Vegetarian Friendly</p>
+            <p><b>Special Diets:</b> Vegetarian Friendly, Vegan Options, Gluten Free Options</p>
+            <p><b>Meals:</b> Dinner, Breakfast, Lunch</p>
+            <p><b>Address:</b> Tiruchanoor Road Hotel Fortune Select Grand Ridge, Tirupati 517501 India</p>
+            <p><b>Rating:</b> 4.5</p>
+            <p><b>Contact:</b> +91 877 222 1818</p><br><br>
+            <center>
+                <a href="https://magicpin.in/Tirupati/Tiruchanur/Restaurant/Zodiac-Multicuisine-Restaurant/store/2c7ca5/"><button class="bbttnn">Veiw More</button></a>
+            </center>
+        </div>
+    </div>
+
+    <div class="restaurant-container">
+        <div class="restaurant-image">
+            <h2><b><center>Hotel Mayura</center></b></h2><br><br>
+           <center><img src="https://q-xx.bstatic.com/xdata/images/hotel/max500/275508825.jpg?k=4053f5beaa5e225f8ec0d1818be4c75c69f4f8a59c1986a028d787bccf1941ed&o=" alt="Restaurant 3 Image 1"></center>
+            <!-- Add more images with slide buttons if needed -->
+        </div><br><br>
+        <div class "restaurant-details">
+            <p><b>Cuisines:</b> Indian, Asian</p>
+            <p><b>Special Diets:</b> Vegetarian Friendly, Vegan Options</p>
+            <p><b>Meals:</b> Dinner, Breakfast, Lunch</p>
+            <p><b>Address:</b> No. 209, T.P. Area, Tirupati 517501 India</p>
+            <p><b>Rating:</b> 4.0</p>
+            <p><b>Contact:</b> +91 877 222 592</p><br><br>
+            <center>
+                <a href="https://www.blisstirupati.com/"><button class="bbttnn">Veiw More</button></a>
+            </center>
+        </div>
+    </div>
+
+    <div class="restaurant-container">
+        <div class="restaurant-image">
+            <h2><b><center>Rainbow - Pure Vegitarian</center></b></h2><br><br>
+           <center><img src="https://www.fortunehotels.in/hotel-image/gallery/thumb/201511261144.jpg" alt="Restaurant 3 Image 1"></center>
+            <!-- Add more images with slide buttons if needed -->
+        </div><br><br>
+        <div class "restaurant-details">
+            <p><b>Cuisines:</b> Italian, Chinese, Indian, Asian</p>
+            <p><b>Special Diets:</b> Vegetarian Friendly, Vegan Options, Gluten Free Options</p>
+            <p><b>Meals:</b> Dinner, Breakfast, Lunch</p>
+            <p><b>Address:</b> Shilparamam Tiruchanoor Road, Tirupati 517501 India</p>
+            <p><b>Rating:</b> 4.5</p>
+            <p><b>Contact:</b> 7942337773</p><br><br>
+            <center>
+                <a href="https://www.blisstirupati.com/"><button class="bbttnn">Veiw More</button></a>
+            </center>
+        </div>
+    </div>
+    
+    <div class="restaurant-container">
+        <div class="restaurant-image">
+            <h2><b><center>Southern Spice Avilala Circle</center></b></h2><br><br>
+           <center><img src="https://stayeatsee.s3.amazonaws.com/media/public/listing/full/0a603db663e5a5def0701c3135369c7a7fc53b90.large.webp" alt="Restaurant 3 Image 1"></center>
+            <!-- Add more images with slide buttons if needed -->
+        </div><br><br>
+        <div class "restaurant-details">
+            <p><b>Cuisines:</b> Diner</p>
+            <p><b>Special Diets:</b> Vegetarian Friendly, Vegan Options</p>
+            <p><b>Meals:</b> Dinner, Breakfast, Lunch</p>
+            <p><b>Address:</b> 200 ft Bypass Road, Tirupati India</p>
+            <p><b>Rating:</b> 4.0</p>
+            <p><b>Contact:</b> +91 70951 3333</p><br><br>
+            <center>
+                <a href="https://www.blisstirupati.com/"><button class="bbttnn">Veiw More</button></a>
+            </center>
+        </div>
+    </div>
+ 
+    <div class="restaurant-container">
+        <div class="restaurant-image">
+            <h2><b><center>Hotel Sindhuri Park</center></h2></b><br><br>
+           <center><img src="https://foto.hrsstatic.com/fotos/0/2/1280/1280/100/FFFFFF/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2F7%2F7%2F0%2F6%2F770673%2F770673_r_17671628.jpg/RMiP59Zc%2FLEDOrbdulK%2B2A%3D%3D/600%2C337/6/Sindhuri_Park-Tirupati-Restaurantbreakfast_room-770673.jpg" alt="Restaurant 3 Image 1"></center>
+            <!-- Add more images with slide buttons if needed -->
+        </div><br><br>
+        <div class "restaurant-details">
+            <p><b>Cuisines:</b> Indian, Asian</p>
+            <p><b>Special Diets:</b> Vegetarian Friendly, Vegan Options</p>
+            <p><b>Meals:</b> Dinner, Breakfast, Lunch</p>
+            <p><b>Address:</b> 14-2, 118, 119, Koneti Katta St Mallaiah Gunta Katta, TP Area, Tirupati 517501 India</p>
+            <p><b>Rating:</b> 4.5</p>
+            <p><b>Contact:</b> 9642877773</p><br><br>
+            <center>
+                <a href="https://www.blisstirupati.com/"><button class="bbttnn">Veiw More</button></a>
+            </center>
+        </div>
+    </div>
+    <footer>
+        <div><center><h1 style="color:black; font-size: xx-large;">... Get in Touch</h1></center>
+        </div>
+        <div class="foot">
+          <div id="rec">
+            <p class="name11"><strong>Recommeended</strong></p>
+            
+            <div class="c2">
+                <div class="c1">
+                    <a href="https://twitter.com/A1264M"><i class="fa-brands fa-square-twitter" id="tw"></i></a>
+                    <em>kundhumaddisetti</em>
+                </div>
+            
+                <div class="c1">
+                    <a href="https://mail.google.com/mail/u/0/#inbox"><i class="fa-regular fa-envelope" id="em"></i></a>
+                    <em>moni2003@gmail.com</em>
+                </div>
+            </div>
+            
+            <div class="c2">
+                <div class="c1">
+                    <a href="https://github.com/kundhanamaddisetti"><i class="fa-brands fa-github" id="gi"></i></a>
+                    <em>kundhanamaddisetti</em>
+                </div>
+    
+                <div class="c1">
+                    <a href="https://www.linkedin.com/in/kundhana-lalitha-naga-sri-maddisetti-197b73239/"><i class="fa-brands fa-linkedin" id="li"></i></a>
+                    <em>Kundhana</em>
+                </div>
+            </div>
+            
+
+            
+        </div>
+        
+        <div id="oth">
+            <p class="name11"><strong>Other methods</strong></p>
+            <div class="c2">
+                <div class="c1">
+                    <a href="#"><i class="fa-brands fa-square-whatsapp" id="wh"></i></a>
+                    <em>xxxxx 18101</em>
+                </div>
+                <div class="c1">
+                    <a href="#"><i class="fa-solid fa-phone" id="ph"></i></a>
+                    <em>xxxxx 18101</em>
+                </div>
+            </div>
+            
+            
+            <div class="c2">
+                <div class="c1">
+                    <a href="https://www.facebook.com/profile.php?id=100075638365796&mibextid=ZbWKwL"><i class="fa-brands fa-facebook" id="fa"></i></a>
+                    <em>Parameswari Jagarlamudi</em>
+                </div>
+                <div class="c1">
+                    <a href="https://instagram.com/kundhuu19?utm_source=qr&igshid=OGU0MmVlOWVjOQ=="><i class="fa-brands fa-instagram" id="in"></i></a>
+                    <em>kundhana</em>
+                </div>
+            </div>
+        </div>
+        </div>
+   </footer>
+
+</body>
+</html>

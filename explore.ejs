@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="https://cdn.glitch.global/74966f89-6b4a-4631-ad79-95f11a65e0dd/logo7.jpg?v=1697534616110" type="icon-x/image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"  />
+
+    <style>
+        body {
+            background-color: black;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 260vh;
+            }
+           
+        nav{
+            background-color: black; 
+            width:100vw;
+            height: 10vh;
+            top:0px;
+            left:0px;
+            position: fixed;
+            
+        }
+        .options{
+            color: white;
+            position: absolute;
+            right: 0px;
+            top:0px;
+            width:50vw;
+            height: 10vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        
+        }
+        .options li,.dona-btn a{
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bolder;
+            height: 10vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+        .options li a:hover, .dona-btn  a:hover {
+            color: black;
+            background-color: white;
+            height: 9vh;
+            border-radius: 10%;
+            transition: 1s;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+              
+        }
+        nav li{
+            list-style: none;
+        }
+        nav ul li a{
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+        }
+        .nameee{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+            font-family: lucida Calligraphy;
+
+            font-size: 35px;
+
+            
+        }
+        .name1{
+            color: red;
+
+        }
+        .name2{
+            color: white;
+        }
+        
+        .dona-btn{
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+           
+        }
+        .dona-btn a{
+            width: 100%;
+            height: 100%;
+            color: rgb(255, 255, 255);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bolder;
+            height: 10vh;
+            background-color: rgb(0, 0, 0);
+            font-size: 20px;
+            text-decoration: none;
+                
+        }
+       .drop .donation-content {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+           
+        }    
+        .donation-content {
+            display: none;
+            position: absolute;
+            background-color: #686363;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-top: -20px;
+            margin-left: 30px;
+
+        }
+        .donation-content a {
+            float: none;
+            background-color: rgb(71, 67, 67);
+            color: rgb(255, 255, 255);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bolder;
+            font-size: 19px;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            
+        }  
+        
+        .donation-content a:hover{
+            color: black;
+            background-color: rgba(88, 81, 81, 0);
+            border-radius: 10%;
+            transition: 1s;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        .drop:hover .donation-content{
+            display: block;
+            
+        } 
+        .logod{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center; 
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            border: 1px solid white;
+                       
+        }
+
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+.slide-container .prev,
+.slide-container .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  /* margin-top: 22px; */
+  padding: 16px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 20px;
+  transition: all 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(255, 255, 255, 0.651);
+      
+}
+
+.slide-container .prev:hover,
+.slide-container .next:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.slide-container .prev {
+  left: 40px;
+    
+
+}
+
+
+.slide-container .next {
+  right: 40px;
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.dots-container .dot {
+  cursor: pointer;
+  margin: 5px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+}
+
+.dots-container .dot.active {
+  border: 2px solid red;
+}
+
+* {
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.slide-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1700px;
+  margin: auto;
+  /* position: relative; */
+/* background-color: red; */
+    height: 70vh;
+    width: 95vw;
+    margin-top: 20vh;
+    
+    border-radius: 0px;
+}
+
+.slide-container .slide {
+  display: none;
+  width: 100%;
+}
+
+.slide-container .slide.fade {
+  animation: fade 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.slide-container .slide img {
+  width: 100%;
+}
+
+.imgc1 {
+    height: 700px;
+    width: 1700px;
+    border-radius: 0px 0px 30px 30px;
+    border: 2px solid white;
+
+    
+}
+.middle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    width: 95vw;
+    margin-bottom: 10vh;
+
+    /* border: 0px solid black; */
+    /* background-color: aqua; */
+    margin-top: 40vh;  
+    /* position: relative; */
+    
+    
+    
+  }
+  
+.bottom{
+    /* top:800px; */
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border:0px;
+    margin-bottom: 10vh;
+}
+.whole{
+  /* margin-top: -300vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        .wrapper{
+          margin-top: 40vh;
+        }
+       
+        .outer{
+        display: flex;
+        background-color: gray;
+        align-items: center;
+        justify-content: center;
+        }
+        .card{
+        background: #fff;
+        width: 1090px;
+        height: 280px;
+        display: flex;
+        align-items: center;
+        padding: 25px;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        justify-content: space-between;
+        border-radius: 135px 20px 20px 135px;
+        box-shadow: 10px 5px 5px 10px rgba(0,0,0,0.1);
+        animation: animate 15s linear infinite;
+        animation-delay: calc(3s * var(--delay));
+        }
+        .outer:hover .card{
+        animation-play-state: paused;
+        }
+        .wrapper .card:last-child{
+        animation-delay: calc(-2s * var(--delay));
+        }
+        @keyframes animate {
+            0%{
+            opacity: 0;
+            transform: translateY(100%) scale(0.5);
+            }
+            5%, 20%{
+            opacity: 0.4;
+            transform: translateY(100%) scale(0.7);
+            }
+            25%, 40%{
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0%) scale(1);
+            }
+            45%, 60%{
+            opacity: 0.4;
+            transform: translateY(-100%) scale(0.7);
+            }
+            65%, 100%{
+            opacity: 0;
+            transform: translateY(-100%) scale(0.5);
+            }
+        }
+        .card .content{
+        display: flex;
+        align-items: center;
+        }
+        .wrapper .card .img{
+        height: 240px;
+        width: 240px;
+        position: absolute;
+        left: 15px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+        }
+        .card .img img{
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2);
+        }
+        .card .details{
+        margin-left: 250px;
+        }
+        .details span{
+        font-weight: 600;
+        font-size: 18px;
+        }
+        .card a{
+        text-decoration: none;
+        padding: 7px 18px;
+        border-radius: 25px;
+        color: #fff;
+        background: linear-gradient(#dd04b9 0%, #0616f3 100%);
+        transition: all 0.3s ease;
+        }
+        .card a:hover{
+        transform: scale(0.94);
+        }
+        .ppp{
+            color: black;
+            font-size: 20px;
+        }
+
+        .res_hotel{
+          margin-top: 300px;
+            margin-bottom: -380vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center; 
+            width: 1400px;
+        }
+        .res_hotel p{
+            font-size: 40px;
+        }
+
+        .res_hotel img{
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            border: 2px solid black;
+
+        }
+        .wrapper a{
+          width: 140px;
+          margin-left: 10px;
+        }
+
+        footer{
+            border:  2px solid black;
+            width: 100vw;
+            height: 380px;
+
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: space-evenly;
+            background-color: white;
+            margin-top: 110vh;
+            padding-bottom: -15vh;
+        }
+        .foot{
+            display: flex;
+            flex-direction: row;
+
+        }
+        
+        #rec,#oth{
+            height: 260px;
+            width: 500px;
+            
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* align-items; */
+            color: #000;
+
+            
+
+        }
+       
+        .name11{
+            font-size: 30px;
+            text-align: center;
+
+
+        }
+        
+        .c1{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .c2{
+            display: flex;
+            flex-direction: row;
+            justify-content:space-around;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        i{
+            font-size: 40px;
+            
+        }
+        #tw{
+            color: rgba(57,147,235,255);
+        }
+        #em{
+            color:rgba(248,68,55,255) ;
+        }
+        #gi{
+            margin-left: 10px;
+            color: rgba(0,0,0,255);
+        }
+        #li{
+            margin-left: 20px;
+            color:rgba(0,123,181,255) ;
+        }
+
+        #wh{
+            color:rgb(54, 187, 34);
+        }
+        #ph{
+            color:rgba(0,0,0,255) ;
+        }
+        #fa{
+            color:rgba(24,119,242,255) ;
+        }
+        #in{
+            margin-left: 5px;
+            color:rgba(154,76,195,255);
+        }
+        #tw:hover ,#em:hover ,#gi:hover ,#li:hover ,#wh:hover ,#ph:hover ,#fa:hover ,#in:hover{
+            font-size: 53px;
+            transition: 2s;
+        }
+        .logo_body img{
+            height: 110px;
+            width:110px;
+            border-radius: 50%;
+            
+            top:80px;
+            right: 8px;
+            position: fixed;
+            z-index: 10; 
+            
+        }
+
+    </style>
+</head>
+<body>
+  <div class="whole">
+    <div class="top">
+            <nav>
+                <ul>
+                  <li class="nameee"><span class="name1">Explore</span> <span class="name2">Epic</span><span class="name1">...</span></li>
+                    <div class="options">
+                        <li><a class="active" href="/home" target="_self" title="Home">Home</a></li>
+                        <li><a class="active" href="/explore" target="_self" title="Explore Tirupati">Explore</a></li>
+                        <div class="drop">
+                            <p class="dona-btn" ><a class="active" class="dona-btn-a" href="/nearby" target="_self" title="Nearby Places to VISIT">Nearby</a></p>
+                            <div class="donation-content">
+                                <a href="/chikkamagaluru">Chikkamagaluru</a>
+                                <a href="/coimbatore">Coimbtore</a>
+                                <a href="/kanchi">Kanchi</a>
+                                <a href="/madhurai" >Madhurai</a>
+                                <a href="/madikeri">Madikeri</a>
+                                <a href="/mysore"> Mysore</a>
+                                <a href="/padmanaba">Anantha Padmanaba </a>
+                                <a href="/sriharikota">Sri Hari Kota  </a>
+                                <a href="/wayanad">Wayanad</a>
+
+                            </div>
+                        </div>
+                        <li><a class="active" href="/transport" target="_self" title="Tranport Facility">Transport</a></li>
+                        <li><a class="active" href="/contact"target="_self" title="In order to Contact us">Contact</a></li>
+                    </div>
+                </ul>
+            </nav>
+    </div>
+    <div class="wrapper">
+            <div class="outer">
+              <div class="card" style="--delay:-1;">
+                <div class="content">
+                  <div class="img"><img src="https://swarajya.gumlet.io/swarajya/2020-05/5037bcba-d983-4d4c-bcc2-6c5bcd562033/Tirumala_090615__1_.jpg" alt=""></div>
+                  <div class="details">
+                    <span class="name">Tirumala Tirupati Devasthanams</span>
+                    <p class="ppp">Tirupati Balaji Temple was built by Raja Thondaman of Thondaman dynasty which ruled the region in and around Padukottai during the 17th-20th century. There are different legends and mythology related to the construction of the temple by Raja Thondaman.</p>
+                  </div>
+                </div>
+                <a href="https://en.wikipedia.org/wiki/Tirumala_Tirupati_Devasthanams">View more</a>
+              </div>
+              
+              <div class="card" style="--delay:0;">
+                <div class="content">
+                  <div class="img"><img src="https://www.hoteldekho.com/storage/img/tourattraction/1661590746925862301s.jpg" alt=""></div>
+                  <div class="details">
+                    <span class="name">ISKCON Tirupati</span>
+                    <p class="ppp">The ISKCON Temple at Tirupati is one of the major pilgrim sites of India and a centre for propagating the philosophy of Lord Krishna and teachings of Bhagavad Gita. Its founder is His Divine Grace A.C. Bhaktivedanta Swami Prabhupada.</p>
+                  </div>
+                </div>
+                <a href="https://iskcontirupati.info/about-iskcon-tirupati/">View more</a>
+              </div>
+        
+              <div class="card" style="--delay:1;">
+                <div class="content">
+                  <div class="img"><img src="https://i0.wp.com/aravindgundumane.com/wp-content/uploads/2019/09/DSC_3905.jpg?resize=1140%2C760&ssl=1" alt=""></div>
+                  <div class="details">
+                    <span class="name">Chandragiri Fort</span>
+                    <p class="ppp">Chandragiri is a well-known fort in Tirupati. Constructed in the 11th century and used by Narasimha Saluva as his administrative centre in 1485. Chandragiri means the hill of the moon as it resembles a crescent. Raja Mahal and Rani Mahal, two well-preserved buildings are inside the fort.</p>
+                  </div>
+                </div>
+                <a href="https://en.wikipedia.org/wiki/Chandragiri">View more</a>
+              </div>
+        
+              <div class="card" style="--delay:2;">
+                <div class="content">
+                  <div class="img"><img src="https://1.bp.blogspot.com/-powfGuCQ5kU/YQ064c1LTzI/AAAAAAAAovw/jWWxnrjgmuIGy90h9GSAt2Racq5vJsaXgCLcBGAsYHQ/w1200-h630-p-k-no-nu/74614094_2516190498467986_6398249691800141824_n.jpg" alt=""></div>
+                  <div class="details">
+                    <span class="name">Sri Vari Museum</span>
+                    <p class="ppp">Sri Vari Museum is a famous attraction to get a glimpse into the religious history of the region. The museum has an impressive collection of artefacts that give insights into the ancient history and architecture of the temple that includes sculptures, photographs, scriptures, temple and pooja utensils, etc.</p>
+                  </div>
+                </div>
+                <a href="https://commons.wikimedia.org/wiki/File:Srivari_Museum.jpg">View more</a>
+              </div>
+        
+              <div class="card" style="--delay:0;">
+                <div class="content">
+                  <div class="img"><img src="https://leadwinner.com/shilparamam2/images2/tirupathi1/3.JPG?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""></div>
+                  <div class="details">
+                    <span class="name">Shilparamam</span>
+                    <p class="ppp">    Shilparamam has always been a popular hub of culture and traditions and this rural setting here is a veritable destination, that brings back those childhood memories of lifestyle in a village.</p>
+                  </div>
+                </div>
+                <a href="https://en.wikipedia.org/wiki/Shilparamam">View more</a>
+              </div>
+              
+              <div class="card" style="--delay:2;">
+                <div class="content">
+                  <div class="img"><img src="https://img.traveltriangle.com/blog/wp-content/uploads/2020/02/Waterfalls-In-Tirupati_20th-feb.jpg" alt=""></div>
+                  <div class="details">
+                    <span class="name">Talakona WaterFalls</span>
+                    <p class="ppp">Talakona is a improving tourism center which is being attracted by tourists a lot which is situated near to Tirupati-Madanapalli high way, in Sri Venkateswara National Park in Chittoor District of Andhrapradesh. With a height of 270 feet, it is the tallest waterfall in Andhra Pradesh.</p>
+                  </div>
+                </div>
+                <a href="https://en.wikipedia.org/wiki/Talakona">View more</a>
+              </div>
+        
+              <!-- Duplicate the following card element for 4 more cards -->
+              <div class="card" style="--delay:3;">
+                <div class="content">
+                  <div class="img"><img src="https://images.newindianexpress.com/uploads/user/imagelibrary/2019/11/23/w900X450/Tiruchanur-temple.jpg?w=400&dpr=2.6" alt=""></div>
+                  <div class="details">
+                    <span class="name">Sri Padmavathi Ammavari Temple</span>
+                    <p class="ppp">Goddess Padmavati wife of Lord Venkateshwara resides in the foot hill of Tirumala. The temple of goddess Padmavathi is at a distance of 5kms from Tirupati in Tiruchanoor or Alamelumangapuram. The devotees believe that a visit to goddess Padmavathi is a must before visiting Lord Venkateshwara temple in Tirumala.</p>
+                  </div>
+                </div>
+                <a href="https://en.wikipedia.org/wiki/Padmavathi_Temple">View more</a>
+              </div>
+        
+              <div class="card" style="--delay:4;">
+                <div class="content">
+                  <div class="img"><img src="https://www.holidify.com/images/cmsuploads/compressed/shutterstock_1525421399_20200130183215_20200130183321.png" alt=""></div>
+                  <div class="details">
+                    <span class="name">Rock Garden</span>
+                    <p class="ppp">The Rock Garden is one of the best places to see in Tirupati which is considered sacred among the believers of Lord Vishnu. It is also known as Silathoranam as it has a Natural stone formation in the form of an arch.The Precambrian natural stone formation of the Rock Garden is the only one of its kind found in the continent.</p>
+                  </div>
+                </div>
+                <a href="https://en.wikipedia.org/wiki/Natural_Arch,_Tirumala_hills">View more</a>
+              </div>
+        
+              <div class="card" style="--delay:5;">
+                <div class="content">
+                  <div class="img"><img src="https://www.sterlingholidays.com/blog/wp-content/uploads/2018/04/jim.jpg" alt=""></div>
+                  <div class="details">
+                    <span class="name">Sri Venkateswara National Park</span>
+                    <p class="ppp">Sri Venkateswara Wildlife Sanctuary, spread across the Kadapa and Chittoor districts of Andhra Pradesh, is located around 15 km from Tirupati. Established in 1989, Venkateshwara covers an area of 353 sq. km and is surrounded by Seshachalam and Tirumala Hills. </p>
+                  </div>
+                </div>
+                <a href="https://en.wikipedia.org/wiki/Sri_Venkateswara_National_Park">View more</a>
+              </div>
+        
+              <div class="card" style="--delay:6;">
+                <div class="content">
+                  <div class="img"><img src="https://www.darshanbooking.com/wp-content/uploads/2017/08/Tirumala-Tirupati-Brahmotsavam-Dates-810x360.jpg" alt=""></div>
+                  <div class="details">
+                    <span class="name">Srivari Brahmotsavam(Venkateswara temple)</span>
+                    <p class="ppp">The Sri Venkateswara Swami Temple is a Hindu temple situated in the hill town of Tirumala at Tirupati in Tirupati district of Andhra Pradesh, India. The Temple is dedicated to Venkateswara, a form of Vishnu, who is believed to have appeared on the earth to save mankind from trials and troubles of Kali Yuga. Hence the place has also got the name Kaliyuga Vaikuntha and the deity here is referred to as Kaliyuga Prathyaksha Daivam.</p>
+                  </div>
+                </div>
+                <a href="https://en.wikipedia.org/wiki/Venkateswara_Temple,_Tirumala">View more</a>
+              </div>
+              
+        </div>
+    </div>
+          
+    </div>
+    
+  </div>
+  <div>
+    <div class="res_hotel">
+      <div >
+          <p>Top 9 Hotels in TIRUPATI  </p>
+          <a href="http://localhost:3003/tirupati">
+              <img src="https://us.123rf.com/450wm/norbertsobolewski/norbertsobolewski1403/norbertsobolewski140300023/27440006-cartoon-hotel-standing-among-other-buildings.jpg?ver=6" alt="">
+          </a>
+      </div>
+      <div>
+          <p>Top 9 Restaurants in TIRUPATI </p>
+          <a href="http://localhost:3003/tirupati_restaurant">
+              <img src="https://img.freepik.com/free-vector/italian-restaurant-flat-design_23-2147560162.jpg" alt="">
+          </a>
+      </div>
+  </div>
+  <p class="logo_body"><img src="https://cdn.glitch.global/74966f89-6b4a-4631-ad79-95f11a65e0dd/logo11.jpg?v=1697535569992" alt="">
+
+
+</div>
+<footer>
+  <div><center style="color:rgb(0, 0, 0)"><h1>...Get in Touch</h1></center></div>
+  <div  class="foot">
+      
+      <div id="rec">
+          <p class="name11"><strong>Recommeended</strong></p>
+          
+          <div class="c2">
+              <div class="c1">
+                  <a href="https://twitter.com/A1264M"><i class="fa-brands fa-square-twitter" id="tw"></i></a>
+                  <em>kundhumaddisetti</em>
+              </div>
+          
+              <div class="c1">
+                  <a href="https://mail.google.com/mail/u/0/#inbox"><i class="fa-regular fa-envelope" id="em"></i></a>
+                  <em>moni2003@gmail.com</em>
+              </div>
+          </div>
+          
+          <div class="c2">
+              <div class="c1">
+                  <a href="https://github.com/kundhanamaddisetti"><i class="fa-brands fa-github" id="gi"></i></a>
+                  <em>kundhanamaddisetti</em>
+              </div>
+  
+              <div class="c1">
+                  <a href="https://www.linkedin.com/in/kundhana-lalitha-naga-sri-maddisetti-197b73239/"><i class="fa-brands fa-linkedin" id="li"></i></a>
+                  <em>Kundhana</em>
+              </div>
+          </div>
+          
+
+          
+      </div>
+      
+      <div id="oth">
+          <p class="name11"><strong>Other methods</strong></p>
+          <div class="c2">
+              <div class="c1">
+                  <a href="#"><i class="fa-brands fa-square-whatsapp" id="wh"></i></a>
+                  <em>xxxxx 18101</em>
+              </div>
+              <div class="c1">
+                  <a href="#"><i class="fa-solid fa-phone" id="ph"></i></a>
+                  <em>xxxxx 18101</em>
+              </div>
+          </div>
+          
+          
+          <div class="c2">
+              <div class="c1">
+                  <a href="https://www.facebook.com/profile.php?id=100075638365796&mibextid=ZbWKwL"><i class="fa-brands fa-facebook" id="fa"></i></a>
+                  <em>Parameswari Jagarlamudi</em>
+              </div>
+              <div class="c1">
+                  <a href="https://instagram.com/kundhuu19?utm_source=qr&igshid=OGU0MmVlOWVjOQ=="><i class="fa-brands fa-instagram" id="in"></i></a>
+                  <em>kundhana</em>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+</footer>
+      
+</body>
+</html>
+
+
+
+
+
+
+
+
